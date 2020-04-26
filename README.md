@@ -7,7 +7,7 @@
 
 # For testing in C (HLS), 
 
-- Please check /hls/README.md for details of the core and its subblock. 
+- Please check /hls/README.md for details of the core and its subblocks. 
 - Change the directory of the .hex and .mem file in /hls/Define_instruction/filepath.txt.
 - All .hex and .mem files of the codes are resided in /codes/ directory.
 	- There are three algorithms, each includes five different datasets, for testing. You can specify the .hex and .mem files of the code in /hls/Define_instruction/filepath.txt to test.
