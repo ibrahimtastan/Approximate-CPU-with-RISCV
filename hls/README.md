@@ -50,7 +50,7 @@ If there is no any branch condition satisfied, then it will exit from the functi
 ### clz.cpp
 It counts leading zeros. Used for dynamic sizing.
 
-## datapath.cpp
+### datapath.cpp
 Describes all datapath of the core. It coordinates the flow among register file, memory and execution units.
 
 ### lsu
@@ -71,7 +71,7 @@ Executes ADD, SUB instructions approximately (XADD & XSUB).
 ### xmuldiv
 Executes MUL instructions approximately (XMUL).
 
-## tb.cpp
+### tb.cpp
 It starts the code and prints the PC value and instructions until the code is finished. 
 You can print the register or memory values (rf or mem) for any PC values to debug the code.  
 
