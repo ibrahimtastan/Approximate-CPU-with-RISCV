@@ -1,0 +1,15 @@
+### This is a coment
+### Space after # is necessary
+### Do not change the order of paths
+################################## path to LUT #################################
+../LUT.txt
+################################## path to GLUT ##################################
+../GLUT.txt
+################################## path to hex ##################################
+../../codes/KNN/knn_sel_wifi_dataset/200_20/for_use_in_core/knn_sel_wifi_200_200.hex
+# change the hex file for the other tests.
+################################## path to memory ##################################
+../../codes/KNN/knn_sel_wifi_dataset/200_20/for_use_in_core/knn_sel_wifi_200_200.mem
+# change the mem file for the other tests
+# Ending Is Done by ENDOFLUT comment
+ENDOFLUT
