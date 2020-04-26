@@ -1,0 +1,21 @@
+ 128: fae7a223 :  res = 1  mem_address = 92020
+  128: fae7a223 :  res = 1  mem_address = 92024
+  128: fae7a223 :  res = 1  mem_address = 92028
+  128: fae7a223 :  res = 3  mem_address = 92032
+  128: fae7a223 :  res = 3  mem_address = 92036
+  128: fae7a223 :  res = 3  mem_address = 92040
+  128: fae7a223 :  res = 3  mem_address = 92044
+  128: fae7a223 :  res = 3  mem_address = 92048
+  128: fae7a223 :  res = 3  mem_address = 92052
+  128: fae7a223 :  res = 3  mem_address = 92056
+  128: fae7a223 :  res = 3  mem_address = 92060
+  128: fae7a223 :  res = 3  mem_address = 92064
+  128: fae7a223 :  res = 3  mem_address = 92068
+  128: fae7a223 :  res = 3  mem_address = 92072
+  128: fae7a223 :  res = 3  mem_address = 92076
+  128: fae7a223 :  res = 4  mem_address = 92080
+  128: fae7a223 :  res = 4  mem_address = 92084
+  128: fae7a223 :  res = 4  mem_address = 92088
+  128: fae7a223 :  res = 4  mem_address = 92092
+  128: fae7a223 :  res = 4  mem_address = 92096
+ 
