@@ -2,8 +2,8 @@
 Description of the approximate CPU in HLS. 
 Note that approximate blocks (approx_add & approx_mul) contain only dummy codes. Thus the core can only function exactly in HLS.
 
-# HLS-RISCV-32IM-datapath
-Datapath in high level syntesis that takes machine code format in 32 IM RISCV architecture and processes them.   
+# HLS-RISCV-32IM-CPU
+Riscv-core in high level syntesis that takes machine code format in 32 IM RISCV architecture and processes them.   
 It uses 90kb memory and 32 registers.
 
 ## Usage   
@@ -33,6 +33,7 @@ riscv32-unknown-elf-objdump -d test.o
 
 https://content.riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf#chapter.19
 
+## CORE SUBBLOCKS
 
 ### alu
 ALU executes basic integer instructions and returns result value.
