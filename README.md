@@ -1,15 +1,21 @@
 # approximate_cpu_with_riscv
-This repo describes an approximate cpu design with RISC-V ISA. It includes custom approximate adder and multiplier
+
+- This repo describes an approximate cpu design with RISC-V ISA. It includes custom approximate adder and multiplier.
+- The core is decribed with C++ and synthesizd in HLS. 
+- Approximate blocks are designed with low-level (Verilog HDL).
+- Integrating approximate block with the core is done at low-level.
 
 # For testing in C (HLS), 
 
+- Please check /hls/README.md for details of the core and its subblock. 
 - Change the directory of the .hex and .mem file in /hls/Define_instruction/filepath.txt.
-- All .hex and .mem files of the codes are resided in /codes/.
+- All .hex and .mem files of the codes are resided in /codes/ directory.
+	- There are three algorithms, each includes five different datasets, for testing. You can specify the .hex and .mem files of the code in /hls/Define_instruction/filepath.txt to test.
 - After any change in filepath.txt., you should run /hls/Define_instruction/Define_instruction.exe.
 - Observe the change in /hls/define_instructions.h. It should be updated.
 - Now define_instructions.h shows your instruction and data memories content for your specific tests.
 - You can run the test and print the results in a text by arranging proper address for the results in /hls/tb.cpp. 
-- You can also check /hlsREADME.md for more details. 
+
 
 # For generating a sample core from hls,
 
