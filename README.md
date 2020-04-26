@@ -26,11 +26,11 @@ This repo describes an approximate cpu design with RISC-V ISA. It includes custo
 	- Do not forget to transfer .dat files, too. Otherwise, you should correct the path in datapath_mem.v, datapath_inst_mem.v, and datapath_rf.v for readmemh.
 - You should change approx_add and approx_mul verilog codes with the ones reside in /rtl/core/.
 	This modules are different than the ones created by HLS!. 
-	!! You should add approx_levels to definitions of the modules!!
-	You should change instantiations of these modules in datapath.v.
-	You should also change datapath module instantiation in riscv_core.v. 
-	You should also make approx_levels inputs of riscv_core module to achieve independent controls of these levels.
-	You can check the sample generated codes in /thesis_deliverables/rtl/core/.
+	- !! You should add approx_levels to definitions of the modules!!
+	- You should change instantiations of these modules in datapath.v.
+	- You should also change datapath module instantiation in riscv_core.v. 
+	- You should also make approx_levels inputs of riscv_core module to achieve independent controls of these levels.
+	- You can check the sample generated codes in /thesis_deliverables/rtl/core/.
 - You can also use sample core, which is in /rtl/core/, as a main core and only change the datapath_inst_mem_rom.dat and datapath_mem_ram.dat for new code simulations.
 
 
