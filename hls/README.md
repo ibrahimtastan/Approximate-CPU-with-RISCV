@@ -1,13 +1,11 @@
-## MEHMET ALP ŞARKIŞLA
 
-# Version Differences
-This is the first chekpoint of my thesis. It encomposes finest version of the imporovments of the first two weeks.Hex and LUT file paths can be changed in **Codeblocks** code now. So running exe file be sufficient. 
-
-Also LUTs can be grouped in GLUTs now. GLUTS not control each instruction but groups of instructions. Theese are used in controlling funtions. For example BRANCH function is executed if any of the BEQ BNE BLT BGE BLTU BGEU is in the hex file. Branch function is completely not used if no branch related instruction is used in the application.
+Description of the approximate CPU in HLS. 
+Note that approximate blocks (approx_add & approx_mul) contain only dummy codes. Thus the core can only function exactly in HLS.
 
 # HLS-RISCV-32IM-datapath
 Datapath in high level syntesis that takes machine code format in 32 IM RISCV architecture and processes them.   
-It uses 1kb memory and 32 registers.   
+It uses 90kb memory and 32 registers.
+
 ## Usage   
 1. Write a C code that does not contain       
 ```
@@ -24,50 +22,56 @@ riscv32-unknown-elf-objcopy -O binary -j .text test.o hls.hex;
 riscv32-unknown-elf-objdump -d test.o
 ```
 3. open Vivado HLS  
-4. choose open project and choose data_path folder  
-5. change lcoation of hls.hex on tb.cpp  
-
+4. choose open project and choose core_hls folder  
+ 
 5. Run hls   
    - press run C simulation  and check Clean Build  
      - press ok   
    - You can also Run C synthesis   
-
-* If needed pragma's  can be changed from data_path function in the data_path.cpp 
-* If needed memory size can be changed from mem[<size>] in data_path.cpp and data_path.hpp 
 
 ## RISCV 32IM ISA  
 
 https://content.riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf#chapter.19
 
 
-## data_path.cpp
-
-### muldiv
-Executes RV32M instructions, returns result value.
-
 ### alu
 ALU executes basic integer instructions and returns result value.
+
+### approx_add
+Approximate adder block. Only includes dummy operations. It is needed to create the module description in low-level (Verilog HDL)
+
+### approx_mul
+Approximate multiplier block. Only includes dummy operations. It is needed to create the module description in low-level (Verilog HDL)
+
+### branch.cpp
+Signed and unsigned branch instructions BEQ, BLT, BEG, BEGU,BLTU are implemented. Get immediate function is written to extract immediate value from the instruction.
+If there is no any branch condition satisfied, then it will exit from the function while incrementing PC by 4. 
+
+### clz.cpp
+It counts leading zeros. Used for dynamic sizing.
+
+## datapath.cpp
+Describes all datapath of the core. It coordinates the flow among register file, memory and execution units.
 
 ### lsu
 Handles memory operations.
 
-### branch
-Signed and unsigned branch instructions BEQ, BLT, BEG, BEGU,BLTU are implemented. Get immediate function is written to extract immediate value from the instruction.
-If there is no any branch condition satisfied, then it will exit from the function while incrementing PC by 4. 
+### muldiv
+Executes RV32M instructions, returns result value.
 
-### jump
-JAL and JALR commands are implemented. Immediate values are calculated inside of the function. Last PC value is incremented by 4 and stored in the link register. For JALR instruction, it takes a register value for base instead of previous PC value.
+### next_pc.cpp
+This function is needed for PC to count.
 
-### get_immediate 
-Parses encoded immediate values in RISCV ISA.
+### riscv_core.cpp
+Top module of the core.
 
-### data_path
-Datapath coordinates the flow between register file and execution units.
+### xalu
+Executes ADD, SUB instructions approximately (XADD & XSUB).
+
+### xmuldiv
+Executes MUL instructions approximately (XMUL).
 
 ## tb.cpp
-First it initializes stack pointer and porgram counter registers.   
-Then it reads hls.hex file and assigns it to a vector type array.   
-It prints values of PC(hex) Machine instruction(hex) rf[15](dec) , rf[14](dec), rf[2](dec), and rf[0](dec).  
-You can confirm the code by checking results in step 2.  
-* Other elements (rf or mem) can also be added
+It starts the code and prints the PC value and instructions until the code is finished. 
+You can print the register or memory values (rf or mem) for any PC values to debug the code.  
 
